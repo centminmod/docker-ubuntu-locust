@@ -18,21 +18,21 @@ use native host network to lower network overhead
 
 where `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com`
 
-    docker run -d -p 8089:8089 --name locust -e LOCUST_MODE=master -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+    docker run -d -p 8089:8089 --name locustmaster -e LOCUST_MODE=master -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 use native host network to lower network overhead
 
-    docker run -d -p 8089:8089 --net=host --name locust -e LOCUST_MODE=master -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+    docker run -d -p 8089:8089 --net=host --name locustmaster -e LOCUST_MODE=master -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 **slave**
 
-Where `<master-server-ip` is IP address for locust.io master and `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com`
+Where `<master-server-ip` is IP address for locust.io master and `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com` and first slave named `--name locustslave1`. For second slave name `--name locustslave2`, third slave name `--name locustslave3` etc.
 
-    docker run -d -p 8089:8089 --name locust -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+    docker run -d -p 8089:8089 --name locustslave1 -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 use native host network to lower network overhead
 
-    docker run -d -p 8089:8089 --net=host --name locust -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+    docker run -d -p 8089:8089 --net=host --name locustslave1 -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 # inspecting logs
 
@@ -54,3 +54,19 @@ example run log inspection for docker image named `locust`
     [2017-07-06 03:45:42,760] 9ba173c41ae7/INFO/locust.runners: Resetting stats
 
 ![](images/locust-02.png)
+
+# tips
+
+setup a SSH alias commands
+
+to remove docker image `locust` standalone
+
+    alias rmlocust='docker stop locust; docker rm locust; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustmaster` master
+
+    alias rmlocustmaster='docker stop locustmaster; docker rm locustmaster; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave1` slave `#1`
+
+    alias rmlocustmaster='docker stop locustslave1; docker rm locustslave1; docker rmi centminmod/docker-ubuntu-locust;'
