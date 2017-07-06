@@ -1,5 +1,9 @@
 Docker image for [locust.io](http://locust.io). [Locust Documentation](http://docs.locust.io/).
 
+Previously tested Locust.io
+
+* [Wordpress7 Locust.io Load Testing (Dec 2014)](http://wordpress7.centminmod.com/132/wordpress-super-cache-benchmark-locust-io-load-testing/)
+
 ![](images/locust-01.png)
 
 # standalone
