@@ -69,4 +69,32 @@ to remove docker image `locustmaster` master
 
 to remove docker image `locustslave1` slave `#1`
 
-    alias rmlocustmaster='docker stop locustslave1; docker rm locustslave1; docker rmi centminmod/docker-ubuntu-locust;'
+    alias rmlocustslave1='docker stop locustslave1; docker rm locustslave1; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave2` slave `#2`
+
+    alias rmlocustslave2='docker stop locustslave2; docker rm locustslave2; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave3` slave `#3`
+
+    alias rmlocustslave3='docker stop locustslave3; docker rm locustslave3; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave4` slave `#4`
+
+    alias rmlocustslave4='docker stop locustslave4; docker rm locustslave4; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave5` slave `#5`
+
+    alias rmlocustslave5='docker stop locustslave5; docker rm locustslave5; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave6` slave `#6`
+
+    alias rmlocustslave6='docker stop locustslave6; docker rm locustslave6; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave7` slave `#7`
+
+    alias rmlocustslave7='docker stop locustslave7; docker rm locustslave7; docker rmi centminmod/docker-ubuntu-locust;'
+
+to remove docker image `locustslave8` slave `#8`
+
+    alias rmlocustslave8='docker stop locustslave8; docker rm locustslave8; docker rmi centminmod/docker-ubuntu-locust;'
