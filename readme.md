@@ -1,3 +1,7 @@
+# docker-ubuntu-locust
+
+[![](https://images.microbadger.com/badges/version/centminmod/docker-ubuntu-locust.svg)](https://microbadger.com/images/centminmod/docker-ubuntu-locust "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/centminmod/docker-ubuntu-locust.svg)](https://microbadger.com/images/centminmod/docker-ubuntu-locust "Get your own image badge on microbadger.com")
+
 Docker image for [locust.io](http://locust.io). [Locust Documentation](http://docs.locust.io/).
 
 Previously tested Locust.io
