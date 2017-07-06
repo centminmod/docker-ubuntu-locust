@@ -4,6 +4,8 @@ Docker image for [locust.io](http://locust.io)
 
 # standalone
 
+where `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com`
+
     docker run -d -p 8089:8089 --name locust -e LOCUST_MODE=standalone -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 use native host network to lower network overhead
@@ -14,6 +16,8 @@ use native host network to lower network overhead
 
 **master**
 
+where `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com`
+
     docker run -d -p 8089:8089 --name locust -e LOCUST_MODE=master -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 use native host network to lower network overhead
@@ -22,7 +26,7 @@ use native host network to lower network overhead
 
 **slave**
 
-Where `<master-server-ip` is IP address for locust.io master
+Where `<master-server-ip` is IP address for locust.io master and `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com`
 
     docker run -d -p 8089:8089 --name locust -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
