@@ -54,6 +54,10 @@ you can script starting X number of slaves i.e. start 3 slave instances with seq
       docker run -d -p $port:8089 --name locustslave${i} -e LOCUST_MODE=slave -e MASTER_HOST=${masterhost} -e TARGET_URL=${target} centminmod/docker-ubuntu-locust
     done
 
+example of 1x master + 3x slave locust.io configuration
+
+![](images/locust-04.png)
+
 # inspecting logs
 
     docker logs locust -f
