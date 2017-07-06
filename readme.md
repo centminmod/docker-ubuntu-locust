@@ -28,11 +28,11 @@ use native host network to lower network overhead
 
 Where `<master-server-ip` is IP address for locust.io master and `TARGET_URL` is the site domain name you want to test i.e. `TARGET_URL=http://domain.com` and first slave named `--name locustslave1`. For second slave name `--name locustslave2`, third slave name `--name locustslave3` etc.
 
-    docker run -d -p 8090:8089 --name locustslave1 -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+    docker run -d -p 8090:8089 --name locustslave1 --link locustmaster -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 use native host network to lower network overhead
 
-    docker run -d -p 8090:8089 --net=host --name locustslave1 -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+    docker run -d -p 8090:8089 --net=host --name locustslave1 --link locustmaster -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
 
 **slave scripting**
 
@@ -41,7 +41,7 @@ you can script starting X number of slaves i.e. start 3 slave instances with seq
     for i in $(seq 1 3); do
       port=8089
       port=$(($port+$i))
-      docker run -d -p $port:8089 --name locustslave${i} -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
+      docker run -d -p $port:8089 --name locustslave${i} --link locustmaster -e LOCUST_MODE=slave -e MASTER_HOST=http://<master-server-ip> -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
     done
 
 # inspecting logs
