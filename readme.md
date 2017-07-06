@@ -1,4 +1,4 @@
-Docker image for [locust.io](http://locust.io)
+Docker image for [locust.io](http://locust.io). [Locust Documentation](http://docs.locust.io/).
 
 ![](images/locust-01.png)
 
