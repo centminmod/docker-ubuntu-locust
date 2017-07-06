@@ -1,5 +1,7 @@
 Docker image for [locust.io](http://locust.io)
 
+![](images/locust-01.png)
+
 # standalone
 
     docker run -d -p 8089:8089 --name locust -e LOCUST_MODE=standalone -e TARGET_URL=http://127.0.0.1 centminmod/docker-ubuntu-locust
@@ -34,3 +36,5 @@ example run log inspection for docker image named `locust`
     [2017-07-06 03:45:25,073] 9ba173c41ae7/INFO/locust.runners: Hatching and swarming 1000 clients at the rate 100 clients/s...
     [2017-07-06 03:45:42,760] 9ba173c41ae7/INFO/locust.runners: All locusts hatched: MyLocust: 1000
     [2017-07-06 03:45:42,760] 9ba173c41ae7/INFO/locust.runners: Resetting stats
+
+![](images/locust-02.png)
